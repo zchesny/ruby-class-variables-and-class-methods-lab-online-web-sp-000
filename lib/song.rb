@@ -4,21 +4,17 @@ class Song
   attr_accessor :name, :artist, :genre
 
   @@count = 0
-  @@genres = {}
-  @@artists = {}
+  @@genres = []
+  @@artists = []
+  @@genre_count = {}
+  @@artist_count = {}
 
   def initialize(name, artist, genre)
     @name = name
     @artist = artist
     @genre = genre
     @@count += 1
-    #@@genres.has_key?(genre) ? @@genres[genre] += 1 : @@genres[genre] = 1
-
-    if @@artists.include?(artist)
-      puts "HI THERE"
-      binding.pry
-      @@artists[artist] = 1
-    end
+    @@genre_count.has_key?(genre) ? @@genre_count[genre] += 1 : @@genre_count[genre] = 1
     #   @@artists[artist] = @@artists[artist] + 1
     # else
     #   @@artists[artist] = 1
@@ -38,11 +34,11 @@ class Song
   end
 
   def self.genre_count
-    @@genres
+    @@genre_count
   end
 
   def self.artist_count
-    @@artists
+    @@artist_count
   end
 
 end
