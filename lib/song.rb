@@ -18,6 +18,7 @@ class Song
       puts "HI THERE"
       binding.pry
       @@artists[artist] = 1
+    end
     #   @@artists[artist] = @@artists[artist] + 1
     # else
     #   @@artists[artist] = 1
