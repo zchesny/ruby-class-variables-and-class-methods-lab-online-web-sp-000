@@ -16,6 +16,8 @@ class Song
     @@count += 1
     @@genre_count.has_key?(genre) ? @@genre_count[genre] += 1 : @@genre_count[genre] = 1
     @@artist_count.has_key?(artist) ? @@artist_count[artist] += 1 : @@artist_count[artist] = 1
+    @@artists << artist
+    @@genres << genre
   end
 
   def self.count
@@ -23,11 +25,11 @@ class Song
   end
 
   def self.genres
-    @@genre_count.keys
+    @@genres.uniq!
   end
 
   def self.artists
-    @@artist_count.keys
+    @@artists.uniq!
   end
 
   def self.genre_count
