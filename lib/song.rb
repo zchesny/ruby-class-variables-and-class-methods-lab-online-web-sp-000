@@ -13,7 +13,7 @@ class Song
     @genre = genre
     @@count += 1
     #@@genres.has_key?(genre) ? @@genres[genre] += 1 : @@genres[genre] = 1
-    
+
     if @@artists.include?(artist)
       puts "HI THERE"
       binding.pry
